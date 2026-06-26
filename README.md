@@ -1,16 +1,48 @@
-# React + Vite
+# Smart Society Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## How to Run
 
-Currently, two official plugins are available:
+### Step 1 - Backend Setup
+```
+cd backend
+npm install
+npm start
+```
+Backend will run on: http://localhost:5000
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Step 2 - Frontend Setup (new terminal)
+```
+cd frontend
+npm install
+npm run dev
+```
+Frontend will run on: http://localhost:5173
 
-## React Compiler
+### Step 3 - MongoDB
+Make sure MongoDB is running locally on your PC.
+Or install it from: https://www.mongodb.com/try/download/community
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Default Test Users (register manually)
+- Admin: role = admin
+- Resident: role = resident  
+- Security: role = security
+- Maintenance: role = maintenance
 
-## Expanding the Oxlint configuration
+## Project Structure
+```
+backend/
+  config/       - DB connection
+  controllers/  - Business logic
+  middleware/   - Auth & upload
+  models/       - MongoDB schemas
+  routes/       - API routes
+  uploads/      - Uploaded images
+  server.js     - Entry point
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+frontend/
+  src/
+    components/ - Reusable UI
+    pages/      - All screens
+    redux/      - State management
+    services/   - API calls
+```
